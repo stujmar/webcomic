@@ -16,5 +16,17 @@
 </head>
 <body>
     <h1>Welcome to your webcomic</h1>
+    <div id='root'></div>
+    <script>
+        const Link = ReactRouterDOM.Link;
+        const Route = ReactRouterDOM.Route;
+
+    const App = () => (
+        <div>
+            this is coming from the js.
+        </div>
+        )
+     ReactDOM.render(<App />, document.querySelector('#root'));
+    </script>
 </body>
 </html>
