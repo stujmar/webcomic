@@ -17,7 +17,7 @@ body {
       border-color: #2C3E50;
     background-color:#2C3E50;
   }
-  #colourPicker div {
+  #colourPicker button {
       display: block;
       margin: 5px;
       width: 10px;
