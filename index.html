@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Comic</title>
-    <!-- Development CDN -->
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <!-- Production CDN -->
-    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script> -->
-    <!-- Router and Babel CDN -->
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
     <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
     <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
-</head>
-<body>
-    <h1>Welcome to your webcomic</h1>
+  </head>
+  <body>
     <div id='root'></div>
-    <script>
-        const Link = ReactRouterDOM.Link;
-        const Route = ReactRouterDOM.Route;
+    <script type='text/babel'>
+      const Link = ReactRouterDOM.Link;
+      const Route = ReactRouterDOM.Route;
 
-    const App = () => (
-        <div>
-            this is coming from the js.
-        </div>
-        )
-     ReactDOM.render(<App />, document.querySelector('#root'));
+      const App = () => (
+        <ReactRouterDOM.HashRouter>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/admin">Admin</Link></li>
+          </ul>
+
+          <Route path="/" exact component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/admin" component={Admin} />
+        </ReactRouterDOM.HashRouter>
+      )
+
+      const Home = () => <h1>Welcome to your Webcomic</h1>
+      const Login = () => <h1>Login</h1>
+      const Admin = () => <h1>Admin</h1>
+
+      ReactDOM.render(<App />, document.querySelector('#root'));
     </script>
-</body>
+  </body>
 </html>
