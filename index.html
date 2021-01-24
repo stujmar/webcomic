@@ -7,6 +7,7 @@
     <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
     <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
     <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <link rel="stylesheet" href="webcomic.css">
   </head>
   <body>
     <div id='root'></div>
@@ -30,7 +31,23 @@
 
       const Home = () => <h1>Welcome to your Webcomic</h1>
       const Login = () => <h1>Login</h1>
-      const Admin = () => <h1>Admin</h1>
+      const Admin = () => {
+        console.log("welcome to admin");
+        return (
+            <div class="adminBody">
+                <h1>Admin</h1>
+                <div id='colourPicker'>
+                    <div id='colourOne' class='colourOption'></div>
+                    <div id='colourTwo' class='colourOption'></div>
+                    <div id='colourThree' class='colourOption'></div>
+                    <div id='colourFour' class='colourOption'></div>
+                    <div id='colourFive' class='colourOption'></div>
+                    <div id='colourSix' class='colourOption'></div>
+                </div>
+            </div>
+            
+        )
+      }
 
       ReactDOM.render(<App />, document.querySelector('#root'));
     </script>
