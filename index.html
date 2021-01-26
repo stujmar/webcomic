@@ -7,6 +7,7 @@
     <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
     <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
     <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-hook-use-state@1.1.0/lib/index.min.js"></script>
 
 
     <link rel="stylesheet" href="webcomic.css">
@@ -16,6 +17,9 @@
     <script type='text/babel'>
       const Link = ReactRouterDOM.Link;
       const Route = ReactRouterDOM.Route;
+      const { useState } = React;
+
+      const [color, setColor] = useState("#fffff");
       const divStyle = {
         background: 'gray',
         };
@@ -47,8 +51,9 @@
             document.getElementById("inputText").value = color;
         };
 
+        
         const handleChange = (e) => {
-            console.log(e.target.value);
+            setColor(e.target.value);
         };
 
         return (
@@ -56,7 +61,7 @@
                 <h1>Admin</h1>
                 <div id="container">
                     <div class="color">
-                        <input type="color" onChange={handleChange} id="inputColor"></input>
+                        <input type="color" value={color} onChange={handleChange} id="inputColor"></input>
                     </div>
                     <div class="btn">
                         <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>

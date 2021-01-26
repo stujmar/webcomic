@@ -5,82 +5,8 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.adminBody {
-    border: 1px solid red;
-}
-
-.colorOption {
+#inputColor {
     display: block;
-    width: 30px;
-    height: 30px;
-}
-
-/* Coming in from codepen */
-/* 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #823fc6;
-} */
-
-#container{
-    width:350px;
-    background:#140721;
-    height:200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius:10px;
-    border: 1px solid;
-    padding: 10px;
-}
-
-.color{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.color input[type="color"]{
-    width:45px;
-    height:45px;
-    margin-right: 15px;
-}
-
-.color input[type="text"]{
-    width: 250px;
-    padding: 10px;
-    font-size: 20px;
-    outline: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    opacity: 0.85;
-    transition: all 250ms ease;
-}
-
-.color input[type="text"]:hover{
-    opacity:1;
-}
-
-.btn #btn{
-    padding: 10px;
-    background:#823fc6;
-    border: none;
-    font-weight: bolder;
-    font-size:18px;
-    letter-spacing: 2px;
-    outline: none;
-    transition: all 300ms ease;
-    margin: 5px;
-}
-
-.btn #btn:hover{
-    background:#140721;
-    color: #823fc6;
-		letter-spacing:3px;
-		border:1px solid #823fc6;
+    height: 50px;
+    width: 50px;
 }
