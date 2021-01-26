@@ -47,13 +47,16 @@
             document.getElementById("inputText").value = color;
         };
 
+        const handleChange = (e) => {
+            console.log(e.target.value);
+        };
+
         return (
             <div className="adminBody">
                 <h1>Admin</h1>
                 <div id="container">
                     <div class="color">
-                        <input type="color" value="#823fc6" id="inputColor"></input>
-                        <input type="text" spellcheck="false" placeholder="Color" id="inputText" value="#823fc6"></input>
+                        <input type="color" onChange={handleChange} id="inputColor"></input>
                     </div>
                     <div class="btn">
                         <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>
