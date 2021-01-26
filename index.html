@@ -20,17 +20,19 @@
         };
 
       const App = () => (
-        <ReactRouterDOM.HashRouter>
+          <ReactRouterDOM.HashRouter>
+        <div className="wrapper" style={divStyle}>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/admin">Admin</Link></li>
           </ul>
-
+          
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/admin" component={Admin} />
-        </ReactRouterDOM.HashRouter>
+          </div>
+          </ReactRouterDOM.HashRouter>
       )
 
       const Home = () => <h1>Welcome to your Webcomic</h1>
@@ -38,7 +40,7 @@
       const Admin = () => {
         console.log("welcome to admin");
         return (
-            <div className="adminBody" style={divStyle}>
+            <div className="adminBody">
                 <h1>Admin</h1>
                 <div id='colourPicker'>
                     <button id='colourOne' class='colourOption'></button>
