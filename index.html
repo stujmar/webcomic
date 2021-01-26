@@ -14,6 +14,10 @@
     <script type='text/babel'>
       const Link = ReactRouterDOM.Link;
       const Route = ReactRouterDOM.Route;
+      const divStyle = {
+        background: 'red',
+        border: '5px solid pink'
+        };
 
       const App = () => (
         <ReactRouterDOM.HashRouter>
@@ -34,7 +38,7 @@
       const Admin = () => {
         console.log("welcome to admin");
         return (
-            <div class="adminBody">
+            <div className="adminBody" style={divStyle}>
                 <h1>Admin</h1>
                 <div id='colourPicker'>
                     <button id='colourOne' class='colourOption'></button>
