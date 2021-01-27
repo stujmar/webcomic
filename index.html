@@ -21,16 +21,26 @@
 
 
         const App = () => {
-
+        let newColor = "";
         const [color, setColor] = useState({
             background: 'gray'
         });
 
-        console.log(color);
+        const handleColor = (e) => {
+            console.log(e.target.value);
+            newColor = e.target.value;
+            setColor({
+                background: newColor
+            })
+        }
 
         return (
         <ReactRouterDOM.HashRouter>
             <div className="wrapper" style={color}>
+                <input 
+                    type="text"
+                    
+                    onChange={handleColor} ></input>
                 <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/login">Login</Link></li>
