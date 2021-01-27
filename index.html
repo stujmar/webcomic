@@ -27,14 +27,14 @@
     const { useState } = React
     console.log(useState);
 
-    //   const [color, setColor] = useState("#fffff");
-      const divStyle = {
+   const [color, setColor] = useState({
         background: 'gray',
-        };
+        });
+
 
       const App = () => (
           <ReactRouterDOM.HashRouter>
-        <div className="wrapper" style={divStyle}>
+        <div className="wrapper" style={color}>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/login">Login</Link></li>
