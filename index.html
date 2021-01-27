@@ -4,10 +4,10 @@
     <meta charset='UTF-8'>
     <title>Web Comic</title>
     <script src='https://unpkg.com/react@17/umd/react.production.min.js'></script>
-    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@17/umd/react-dom.production.min.js'></script>
     <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
     <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
-    <script type="text/bable" src="https://cdn.jsdelivr.net/npm/react-hook-use-state@1.1.0/lib/index.min.js"></script>
+    <!-- <script type="text/bable" src="https://cdn.jsdelivr.net/npm/react-hook-use-state@1.1.0/lib/index.min.js"></script> -->
 
 
     <link rel="stylesheet" href="webcomic.css">
@@ -15,38 +15,41 @@
   <body>
     <div id='root'></div>
     <script type='text/babel'>
-      const Link = ReactRouterDOM.Link;
-      const Route = ReactRouterDOM.Route;
-    //   const { useState } = React;
-    console.log(document.location.pathname);
-    console.log(document.URL);
-    console.log(document);
-    console.log(ReactRouterDOM);
-    console.log(React);
-    console.log(ReactDOM);
-    const { useState } = React
-    console.log(useState);
+        const Link = ReactRouterDOM.Link;
+        const Route = ReactRouterDOM.Route;
+        const { useState } = React
 
-   const [color, setColor] = useState({
-        background: 'gray',
+
+        const App = () => {
+
+        const [color, setColor] = useState({
+            background: 'gray'
         });
 
+        console.log(color);
 
-      const App = () => (
-          <ReactRouterDOM.HashRouter>
-        <div className="wrapper" style={color}>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/admin">Admin</Link></li>
-          </ul>
-          
-          <Route path="/" exact component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/admin" component={Admin} />
-          </div>
-          </ReactRouterDOM.HashRouter>
-      )
+        return (
+        <ReactRouterDOM.HashRouter>
+            <div className="wrapper" style={color}>
+                <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/admin">Admin</Link></li>
+            </ul>    
+            <Route path="/" exact component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/admin" component={Admin} />
+            </div>
+        </ReactRouterDOM.HashRouter>
+        )
+
+      };
+
+
+
+
+
+      
 
       const Home = () => <h1>Welcome to your Webcomic</h1>
       const Login = () => <h1>Login</h1>
@@ -54,9 +57,9 @@
         console.log("welcome to admin");
 
         const changeColor = () => {
-            var color = document.getElementById("inputColor").value;
-            document.body.style.backgroundColor = color;
-            document.getElementById("inputText").value = color;
+            // var color = document.getElementById("inputColor").value;
+            // document.body.style.backgroundColor = color;
+            // document.getElementById("inputText").value = color;
         };
 
         
@@ -68,8 +71,8 @@
             <div className="adminBody">
                 <h1>Admin</h1>
                 <div id="container">
-                    <div class="color">
-                        <input type="color" value={color} onChange={handleChange} id="inputColor"></input>
+                    <div>
+                        <input type="color" value="#ffffff" onChange={handleChange} id="inputColor"></input>
                     </div>
                     <div class="btn">
                         <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>
