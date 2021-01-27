@@ -25,6 +25,9 @@
         const [color, setColor] = useState({
             background: 'gray'
         });
+        const [colorTwo, setColorTwo] = useState({
+            background: 'gray'
+        });
 
         const handleColor = (e) => {
             console.log(e.target.value);
@@ -37,6 +40,9 @@
         return (
         <ReactRouterDOM.HashRouter>
             <div className="wrapper" style={color}>
+                <header className="header" style={colorTwo}>
+                    <h1>Type a Color</h1>
+                </header>
                 <input 
                     type="text"
                     
