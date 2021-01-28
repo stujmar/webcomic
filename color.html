@@ -25,9 +25,6 @@
         const [color, setColor] = useState({
             background: 'gray'
         });
-        const [colorTwo, setColorTwo] = useState({
-            background: 'gray'
-        });
 
         const handleColor = (e) => {
             console.log(e.target.value);
@@ -54,7 +51,7 @@
             </ul>    
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
-            <Route path="/admin" component={Admin} />
+            <Route path="/admin" component={() => <Admin test={true} />}/>
             </div>
         </ReactRouterDOM.HashRouter>
         )
