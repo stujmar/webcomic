@@ -33,15 +33,15 @@
             console.log(e.target.value);
             newColor = e.target.value;
             setColor({
-                background: newColor
+                background: newColor,
             })
         }
 
         return (
         <ReactRouterDOM.HashRouter>
-            <header className="header" style={color}>
+            <div className="header" style={color}>
                 <h1>Type a Color</h1>
-            </header>
+            </div>
             <div className="wrapper" style={color}>
                 <input 
                     type="text"
