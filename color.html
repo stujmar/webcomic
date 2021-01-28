@@ -51,7 +51,7 @@
             </ul>    
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
-            <Route path="/admin" component={() => <Admin test={true} />}/>
+            <Route path="/admin" component={() => <Admin test={"this is a prop"} />}/>
             </div>
         </ReactRouterDOM.HashRouter>
         )
@@ -66,7 +66,7 @@
 
       const Home = () => <h1></h1>
       const Login = () => <h1>Login</h1>
-      const Admin = () => {
+      const Admin = ({test}) => {
 
 
         const changeColor = () => {
@@ -74,7 +74,7 @@
             // document.body.style.backgroundColor = color;
             // document.getElementById("inputText").value = color;
         };
-
+        console.log(test);
         
         const handleChange = (e) => {
             setColor(e.target.value);
