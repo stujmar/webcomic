@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='UTF-8'>
-    <title>Web Comic</title>
+    <title>Pick a Color</title>
     <script src='https://unpkg.com/react@17/umd/react.production.min.js'></script>
     <script src='https://unpkg.com/react-dom@17/umd/react-dom.production.min.js'></script>
     <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
@@ -45,7 +45,7 @@
             <div className="wrapper" style={color}>
                 <input 
                     type="text"
-                    
+                    className="color-input"
                     onChange={handleColor} ></input>
                 <ul className="list-menu">
                 <li><Link to="/">Home</Link></li>
@@ -67,10 +67,10 @@
 
       
 
-      const Home = () => <h1>Welcome to your Webcomic</h1>
+      const Home = () => <h1></h1>
       const Login = () => <h1>Login</h1>
       const Admin = () => {
-        console.log("welcome to admin");
+
 
         const changeColor = () => {
             // var color = document.getElementById("inputColor").value;
