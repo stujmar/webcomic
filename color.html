@@ -17,6 +17,7 @@
     <script type='text/babel'>
         const Link = ReactRouterDOM.Link;
         const Route = ReactRouterDOM.Route;
+        const Router = ReactRouterDOM.BrowserRouter;
         const { useState } = React
         const listStyle = { listStyle: "none"};
 
@@ -35,21 +36,22 @@
         }
 
         return (
-        <ReactRouterDOM.HashRouter>
-            <div className="header" style={color}>
-                <h1>TYPE A COLOR</h1>
-            </div>
-            <div className="wrapper" style={color}>
-
-                <ul className="list-menu" style={listStyle}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/admin">Admin</Link></li>
-                </ul>    
-                <Route path="/" exact component={Home} />
-                <Route path="/admin" component={() => <Admin test={"this is a prop"} />}/>
-                    </div>
-                    </ReactRouterDOM.HashRouter>
-                    )
+            <Router>
+                <div className="header" style={color}>
+                    <h1>TYPE A COLOR</h1>
+                </div>
+                <div className="wrapper" style={color}>
+                    <ul className="list-menu" style={listStyle}>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/admin">Admin</Link></li>
+                    </ul> 
+                    <ReactRouterDOM.Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/admin" component={() => <Admin test={"this is a prop"} />}/>
+                    </ReactRouterDOM.Switch>   
+                </div>
+            </Router>
+        )
                     
                 };
                 
