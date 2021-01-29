@@ -18,7 +18,7 @@
         const Link = ReactRouterDOM.Link;
         const Route = ReactRouterDOM.Route;
         const { useState } = React
-
+        const listStyle = { listStyle: "none"};
 
         const App = () => {
         let newColor = "";
@@ -41,7 +41,7 @@
             </div>
             <div className="wrapper" style={color}>
 
-                <ul className="list-menu">
+                <ul className="list-menu" style={listStyle}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/admin">Admin</Link></li>
                 </ul>    
