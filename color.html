@@ -40,10 +40,7 @@
                 <h1>TYPE A COLOR</h1>
             </div>
             <div className="wrapper" style={color}>
-                <input 
-                    type="text"
-                    className="color-input"
-                    onChange={handleColor} ></input>
+
                 <ul className="list-menu">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/admin">Admin</Link></li>
@@ -66,16 +63,8 @@
 
       const Home = () => <h1></h1>
     //   const Login = () => <h1>Login</h1>
-      const Admin = ({test}) => {
-
-
-        const changeColor = () => {
-            // var color = document.getElementById("inputColor").value;
-            // document.body.style.backgroundColor = color;
-            // document.getElementById("inputText").value = color;
-        };
-        console.log(test);
-        
+      const Admin = ({test, handleColor}) => {
+   
         const handleChange = (e) => {
             setColor(e.target.value);
         };
@@ -90,7 +79,6 @@
                             className="color-input"
                             onChange={handleColor} >
                         </input>
-                        
                     </div>
                     <div class="btn">
                         <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>
