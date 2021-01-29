@@ -46,11 +46,9 @@
                     onChange={handleColor} ></input>
                 <ul className="list-menu">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/login">Login</Link></li>
                 <li><Link to="/admin">Admin</Link></li>
             </ul>    
             <Route path="/" exact component={Home} />
-            <Route path="/login" component={Login} />
             <Route path="/admin" component={() => <Admin test={"this is a prop"} />}/>
             </div>
         </ReactRouterDOM.HashRouter>
@@ -65,7 +63,6 @@
       
 
       const Home = () => <h1></h1>
-      const Login = () => <h1>Login</h1>
       const Admin = ({test}) => {
 
 
