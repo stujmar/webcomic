@@ -26,10 +26,11 @@
         const [color, setColor] = useState({
             background: 'gray'
         });
-
-        const handleColor = (e) => {
-            console.log(e.target.value);
-            newColor = e.target.value;
+        const [field, setField] = useState("");
+        const handleColor = () => {
+            console.log("app");
+    
+            newColor;
             setColor({
                 background: newColor,
             })
@@ -47,7 +48,7 @@
                     </ul> 
                     <ReactRouterDOM.Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/admin" component={() => <Admin test={"this is a prop"} handleColor={handleColor}/>}/>
+                        <Route path="/admin" component={() => <Admin test={"this is a prop"} handleColor={handleColor} value={field} />}/>
                     </ReactRouterDOM.Switch>   
                 </div>
             </Router>
@@ -65,9 +66,10 @@
 
       const Home = () => <h1></h1>
     //   const Login = () => <h1>Login</h1>
-      const Admin = ({ handleColor }) => {
+      const Admin = ({ handleColor, field }) => {
    
         const handleChange = (e) => {
+            // handleColor(e.target.value);
             console.log(e.target.value);
         };
 
@@ -77,6 +79,7 @@
                 <div class="container">
                         <label for="color">Type any color</label><br/>
                         <input 
+                       
                             name="color"
                             type="text"
                             className="color-input"
