@@ -47,7 +47,7 @@
                     </ul> 
                     <ReactRouterDOM.Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/admin" component={() => <Admin test={"this is a prop"} />}/>
+                        <Route path="/admin" component={() => <Admin test={"this is a prop"} handleColor={handleColor}/>}/>
                     </ReactRouterDOM.Switch>   
                 </div>
             </Router>
@@ -65,10 +65,10 @@
 
       const Home = () => <h1></h1>
     //   const Login = () => <h1>Login</h1>
-      const Admin = ({test, handleColor}) => {
+      const Admin = ({ handleColor }) => {
    
         const handleChange = (e) => {
-            setColor(e.target.value);
+            console.log(e.target.value);
         };
 
         return (
@@ -80,7 +80,7 @@
                             name="color"
                             type="text"
                             className="color-input"
-                            onChange={handleColor} >
+                            onChange={handleChange} >
                         </input>
                 </div>
             </div>
