@@ -31,7 +31,7 @@
         console.log(window.document);
         const Link = ReactRouterDOM.Link;
         const Route = ReactRouterDOM.Route;
-        const Router = ReactRouterDOM.BrowserRouter;
+        const Router = ReactRouterDOM.HashRouter;
         const { useState } = React
         const listStyle = { listStyle: "none"};
 
@@ -60,10 +60,10 @@
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/admin">Admin</Link></li>
                     </ul> 
-                    <ReactRouterDOM.Switch>
+
                         <Route path="/" exact component={Home} />
-                        <Route path="/admin" component={() => <Admin test={"this is a prop"} handleColor={handleColor} value={field} />}/>
-                    </ReactRouterDOM.Switch>   
+                        <Route path="/admin" component={() => <Admin test={"this is a prop"} inputGrabber={handleColor} value={field} />}/>
+  
                 </div>
             </Router>
         )
@@ -80,11 +80,11 @@
 
       const Home = () => <h1></h1>
     //   const Login = () => <h1>Login</h1>
-      const Admin = ({ handleColor, field }) => {
+      const Admin = ({ inputGrabber, field }) => {
    
         const handleChange = (e) => {
             // handleColor(e.target.value);
-            console.log(e.target.value);
+            inputGrabber(e.target.value);
         };
 
         return (
