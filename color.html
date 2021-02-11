@@ -26,6 +26,7 @@
         console.log(b64);
         console.log(unicode);
         
+        console.log(Babel);
 
 
         console.log(window.document);
@@ -81,7 +82,8 @@
       const Home = () => <h1></h1>
     //   const Login = () => <h1>Login</h1>
       const Admin = ({ inputGrabber, field }) => {
-   
+        const [color, setColor] = useState('blue');
+
         const handleChange = (e) => {
             // handleColor(e.target.value);
             inputGrabber(e.target.value);
@@ -96,8 +98,9 @@
                        
                             name="color"
                             type="text"
+                            value="test"
                             className="color-input"
-                            onChange={handleChange} >
+                            onChange={handleChange}>
                         </input>
                 </div>
             </div>
