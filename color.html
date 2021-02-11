@@ -15,64 +15,52 @@
   <body>
     <div id='root'></div>
     <script type='text/babel'>
-        // Can see all all CDN dependencies brought in?
-        console.log(window);
-
-        //Ways to to to and from base64 for transmission.
-        console.log(atob, btoa);
-        let message = "Hello"
-        let b64 = btoa(message);
-        let unicode = atob(b64);
-        console.log(b64);
-        console.log(unicode);
-        
-        console.log(Babel);
-
-
-        console.log(window.document);
         const Link = ReactRouterDOM.Link;
         const Route = ReactRouterDOM.Route;
-        const Router = ReactRouterDOM.HashRouter;
         const { useState } = React
-        const listStyle = { listStyle: "none"};
+
 
         const App = () => {
         let newColor = "";
         const [color, setColor] = useState({
             background: 'gray'
         });
-        const [field, setField] = useState("");
-        const handleColor = (x) => {
-            console.log("what will this be", x);
-    
-            // newColor;
-            // setColor({
-            //     background: newColor,
-            // })
+        const [colorTwo, setColorTwo] = useState({
+            background: 'gray'
+        });
+
+        const handleColor = (e) => {
+            console.log(e.target.value);
+            newColor = e.target.value;
+            setColor({
+                background: newColor,
+            })
         }
 
         return (
-            <Router>
-                <div className="header" style={color}>
-                    <h1>TYPE A COLOR</h1>
-                </div>
-                <div className="wrapper" style={color}>
-                    <ul className="list-menu" style={listStyle}>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/admin">Admin</Link></li>
-                    </ul> 
-
-                        <Route path="/" exact component={Home} />
-                        <Route path="/admin" component={() => <Admin test={"this is a prop"} inputGrabber={handleColor} value={field} />}/>
-  
-                </div>
-            </Router>
+        <ReactRouterDOM.HashRouter>
+            <div className="header" style={color}>
+                <h1>TYPE A COLOR</h1>
+            </div>
+            <div className="wrapper" style={color}>
+                <input 
+                    type="text"
+                    className="color-input"
+                    onChange={handleColor} ></input>
+                <ul className="list-menu">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/admin">Admin</Link></li>
+            </ul>    
+            <Route path="/" exact component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/admin" component={Admin} />
+            </div>
+        </ReactRouterDOM.HashRouter>
         )
-                    
-                };
-                
-                // <li><Link to="/login">Login</Link></li>
-                // <Route path="/login" component={Login} />
+
+      };
+
 
 
 
@@ -80,28 +68,31 @@
       
 
       const Home = () => <h1></h1>
-    //   const Login = () => <h1>Login</h1>
-      const Admin = ({ inputGrabber, field }) => {
-        const [color, setColor] = useState('blue');
+      const Login = () => <h1>Login</h1>
+      const Admin = () => {
 
+
+        const changeColor = () => {
+            // var color = document.getElementById("inputColor").value;
+            // document.body.style.backgroundColor = color;
+            // document.getElementById("inputText").value = color;
+        };
+
+        
         const handleChange = (e) => {
             setColor(e.target.value);
-            inputGrabber(e.target.value);
         };
 
         return (
             <div className="adminBody">
                 <h1>Admin</h1>
-                <div class="container">
-                        <label for="color">Type any color<br/>                            
-                            <input                   
-                                name="color"
-                                type="text"
-                                value={color}
-                                className="color-input"
-                                onChange={handleChange}>
-                            </input>
-                        </label>
+                <div id="container">
+                    <div>
+                        <input type="color" value="#ffffff" onChange={handleChange} id="inputColor"></input>
+                    </div>
+                    <div class="btn">
+                        <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>
+                    </div>
                 </div>
             </div>
         )
