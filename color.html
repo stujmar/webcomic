@@ -42,13 +42,13 @@
             background: 'gray'
         });
         const [field, setField] = useState("");
-        const handleColor = () => {
-            console.log("app");
+        const handleColor = (x) => {
+            console.log("what will this be", x);
     
-            newColor;
-            setColor({
-                background: newColor,
-            })
+            // newColor;
+            // setColor({
+            //     background: newColor,
+            // })
         }
 
         return (
@@ -86,7 +86,7 @@
 
         const handleChange = (e) => {
             setColor(e.target.value);
-            // inputGrabber(e.target.value);
+            inputGrabber(e.target.value);
         };
 
         return (
