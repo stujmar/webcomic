@@ -85,7 +85,7 @@
         const [color, setColor] = useState('blue');
 
         const handleChange = (e) => {
-            // handleColor(e.target.value);
+            setColor(e.event.handleChange);
             inputGrabber(e.target.value);
         };
 
@@ -93,15 +93,15 @@
             <div className="adminBody">
                 <h1>Admin</h1>
                 <div class="container">
-                        <label for="color">Type any color</label><br/>
-                        <input 
-                       
-                            name="color"
-                            type="text"
-                            value="test"
-                            className="color-input"
-                            onChange={handleChange}>
-                        </input>
+                        <label for="color">Type any color<br/>                            
+                            <input                   
+                                name="color"
+                                type="text"
+                                value={color}
+                                className="color-input"
+                                onChange={handleChange}>
+                            </input>
+                        </label>
                 </div>
             </div>
         )
