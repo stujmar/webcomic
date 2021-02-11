@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Pick a Color</title>
+    <script src='https://unpkg.com/react@17/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@17/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <!-- <script type="text/bable" src="https://cdn.jsdelivr.net/npm/react-hook-use-state@1.1.0/lib/index.min.js"></script> -->
+
+
+    <link rel="stylesheet" href="styles/webcomic.css">
+  </head>
+  <body>
+    <div id='root'></div>
+    <script type='text/babel'>
+        // Can see all all CDN dependencies brought in?
+        console.log(window);
+
+        //Ways to to to and from base64 for transmission.
+        console.log(atob, btoa);
+        let message = "Hello"
+        let b64 = btoa(message);
+        let unicode = atob(b64);
+        console.log(b64);
+        console.log(unicode);
+        
+        console.log(Babel);
+
+
+        console.log(window.document);
+        const Link = ReactRouterDOM.Link;
+        const Route = ReactRouterDOM.Route;
+        const Router = ReactRouterDOM.HashRouter;
+        const { useState } = React
+        const listStyle = { listStyle: "none"};
+
+        const App = () => {
+        let newColor = "";
+        const [color, setColor] = useState({
+            background: 'gray'
+        });
+        const [field, setField] = useState("");
+        const handleColor = (x) => {
+            console.log("what will this be", x);
+    
+            // newColor;
+            // setColor({
+            //     background: newColor,
+            // })
+        }
+
+        return (
+            <Router>
+                <div className="header" style={color}>
+                    <h1>TYPE A COLOR</h1>
+                </div>
+                <div className="wrapper" style={color}>
+                    <ul className="list-menu" style={listStyle}>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/admin">Admin</Link></li>
+                    </ul> 
+
+                        <Route path="/" exact component={Home} />
+                        <Route path="/admin" component={() => <Admin test={"this is a prop"} inputGrabber={handleColor} value={field} />}/>
+  
+                </div>
+            </Router>
+        )
+                    
+                };
+                
+                // <li><Link to="/login">Login</Link></li>
+                // <Route path="/login" component={Login} />
+
+
+
+
+      
+
+      const Home = () => <h1></h1>
+    //   const Login = () => <h1>Login</h1>
+      const Admin = ({ inputGrabber, field }) => {
+        const [color, setColor] = useState('blue');
+
+        const handleChange = (e) => {
+            setColor(e.target.value);
+            inputGrabber(e.target.value);
+        };
+
+        return (
+            <div className="adminBody">
+                <h1>Admin</h1>
+                <div class="container">
+                        <label for="color">Type any color<br/>                            
+                            <input                   
+                                name="color"
+                                type="text"
+                                value={color}
+                                className="color-input"
+                                onChange={handleChange}>
+                            </input>
+                        </label>
+                </div>
+            </div>
+        )
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#root'));
+    </script>
+  </body>
+</html>
