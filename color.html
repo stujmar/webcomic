@@ -29,6 +29,10 @@
             background: 'gray'
         });
 
+        const searchBar = {
+        border : "10px solid pink"
+        }
+
         const handleColor = (e) => {
             console.log(e.target.value);
             newColor = e.target.value;
@@ -38,7 +42,7 @@
         }
 
         return (
-        <div>
+        <div style={searchBar}>
             <div className="header" style={color}>
                 <h1>TYPE A COLOR</h1>
             </div>
@@ -46,15 +50,7 @@
                 <input 
                     type="text"
                     className="color-input"
-                    onChange={handleColor} ></input>
-                <ul className="list-menu">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/admin">Admin</Link></li>
-            </ul>    
-            <Route path="/" exact component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/admin" component={Admin} />
+                    onChange={handleColor} ></input>  
             </div>
         </div>
         )
