@@ -18,10 +18,10 @@
         const Link = ReactRouterDOM.Link;
         const Route = ReactRouterDOM.Route;
         const { useState } = React
-
-
+        
         const App = () => {
-        let newColor = "";
+            let newColor = "";
+        const [mousePosition, setMousePosition] = useState({ x: null, y: null });
         const [color, setColor] = useState({
             background: 'gray'
         });
