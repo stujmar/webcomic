@@ -30,11 +30,14 @@
         });
 
         const searchBar = {
-        border : "10px solid white",
+        // border : "10px solid rgba(255,255,255,0.1)",
+        boxShadow: "0 0 0 5px blue",
         textAlign: "center",
         display: "block",
         margin: "0 auto",
-        outline: "none"
+        outline: "none",
+        backgroundClip: "border-box",
+        WebkitBackgroundClip: "border"
         }
 
         const handleColor = (e) => {
