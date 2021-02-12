@@ -40,6 +40,11 @@
         font: "monospace"
         }
 
+        const updateMousePosition = (e) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+            // console.log(mousePosition);
+        };
+
         useEffect(() => {
             window.addEventListener("mousemove", updateMousePosition);
             return () => window.removeEventListener("mousemove", updateMousePosition);
