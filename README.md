@@ -22,7 +22,8 @@ checkout the color.html for a little art project I've been working on. there is 
 
 #### My To Do List
 ---
-* Move all styling into inline react object
-* Work on mouse tracking in color.html
-* Figure out image uploading on webcomic
-* Make a clever fix for admin backdoor
+* [x] Get mouse postions into state in color.html
+* [] Move all styling into inline react object
+* [] Work on mouse tracking to display object
+* [] Figure out image uploading on webcomic
+* [] Make a clever fix for admin backdoor
