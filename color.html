@@ -50,10 +50,11 @@
         // font: "monospace",
         // caretColor: "red",
         // }
-
+        const [ ex, setEx ] = useState(9999);
         const updateMousePosition = (e) => {
+            setEx(8888);
             setMousePosition({ x: e.clientX, y: e.clientY });
-            console.log("percent right", (100 * e.clientX/window.innerWidth).toFixed(0));
+            console.log(ex, (100 * e.clientX/window.innerWidth).toFixed(0));
         };
 
         useEffect(() => {
