@@ -53,7 +53,7 @@
 
         const updateMousePosition = (e) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
-            console.log("percent right", e.clientX/window.innerWidth);
+            console.log("percent right", (100 * e.clientX/window.innerWidth).toFixed(0));
         };
 
         useEffect(() => {
