@@ -79,8 +79,12 @@
             }
         }
 
+        const handleMove = (e) => {
+            console.log(e.clientX, e.clientY);
+        }
+
         return (
-        <div>
+        <div onMouseMove={handleMove}>
             <div className="header" style={color}>
                 <h1>TYPE A COLOR</h1>
             </div>
