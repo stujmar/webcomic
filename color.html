@@ -28,8 +28,7 @@
         const [colorTwo, setColorTwo] = useState({
             background: 'gray'
         });
-
-        const searchBar = {
+        const [ search, setSearch ] = useState({
         border : "none",
         boxShadow: "0 0 0 5px rgba(255,255,255, .2), 0 0 0 10px rgba(255,255,255, .2), 0 0 0 15px rgba(255,255,255, .2),0 0 0 20px rgba(255,255,255, .2)",
         borderRadius: "10px",
@@ -37,8 +36,20 @@
         display: "block",
         margin: "0 auto",
         outline: "none",
-        font: "monospace"
-        }
+        font: "monospace",
+        caretColor: "red",
+        });
+        // const searchBar = {
+        // border : "none",
+        // boxShadow: "0 0 0 5px rgba(255,255,255, .2), 0 0 0 10px rgba(255,255,255, .2), 0 0 0 15px rgba(255,255,255, .2),0 0 0 20px rgba(255,255,255, .2)",
+        // borderRadius: "10px",
+        // textAlign: "center",
+        // display: "block",
+        // margin: "0 auto",
+        // outline: "none",
+        // font: "monospace",
+        // caretColor: "red",
+        // }
 
         const updateMousePosition = (e) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
@@ -72,7 +83,7 @@
             <div style={color}>
                 <div style={wrapper}>
                     <input 
-                    style={searchBar}
+                    style={search}
                     type="text"
                     className="color-input"
                     onChange={handleColor} ></input>  
