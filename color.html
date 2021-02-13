@@ -94,28 +94,28 @@
 
       };
 
-      const Home = () => <h1></h1>
-      const Login = () => <h1>Login</h1>
-      const Admin = () => {
+    //   const Home = () => <h1></h1>
+    //   const Login = () => <h1>Login</h1>
+    //   const Admin = () => {
        
-        const handleChange = (e) => {
-            setColor(e.target.value);
-        };
+    //     const handleChange = (e) => {
+    //         setColor(e.target.value);
+    //     };
 
-        return (
-            <div className="adminBody">
-                <h1>Admin</h1>
-                <div id="container">
-                    <div>
-                        <input type="color" value="#ffffff" onChange={handleChange} id="inputColor"></input>
-                    </div>
-                    <div class="btn">
-                        <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>
-                    </div>
-                </div>
-            </div>
-        )
-      }
+    //     return (
+    //         <div className="adminBody">
+    //             <h1>Admin</h1>
+    //             <div id="container">
+    //                 <div>
+    //                     <input type="color" value="#ffffff" onChange={handleChange} id="inputColor"></input>
+    //                 </div>
+    //                 <div class="btn">
+    //                     <button id="btn" id="getHEX" onclick="changeColor()">Get HEX code</button>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     )
+    //   }
 
       ReactDOM.render(<App />, document.querySelector('#root'));
     </script>
