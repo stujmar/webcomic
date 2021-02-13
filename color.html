@@ -80,7 +80,8 @@
         }
 
         const handleMove = (e) => {
-            console.log(e.clientX, e.clientY);
+            // console.log(e.clientX, e.clientY);
+            setMousePosition({ x: e.clientX, y: e.clientY });
         }
 
         return (
