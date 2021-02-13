@@ -54,11 +54,12 @@
         const updateMousePosition = (e) => {
             setEx(8888);
             setMousePosition({ x: e.clientX, y: e.clientY });
-            console.log(ex, (100 * e.clientX/window.innerWidth).toFixed(0));
+            // console.log(ex, (100 * e.clientX/window.innerWidth).toFixed(0));
         };
 
         useEffect(() => {
             window.addEventListener("mousemove", updateMousePosition);
+            console.log("here we are")
             return () => window.removeEventListener("mousemove", updateMousePosition);
         }, []);
 
@@ -71,9 +72,11 @@
         const handleColor = (e) => {
             console.log(e.target.value);
             newColor = e.target.value;
-            setColor({
-                background: newColor,
-            })
+            if (newColor) {
+                setColor({
+                    background: newColor,
+                })
+            }
         }
 
         return (
