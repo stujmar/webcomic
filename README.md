@@ -5,7 +5,7 @@ This is a tool I'm building with React CDN to be able to stick an editable webco
 
 ## USE
 ---
-1. Clone down this repo (if you have't).
+1. Please clone down this repo (if you have't).
 1. Run webcomic.html in your favorite browser.
 1. That is it! Because it is a CDN it will just run!
 
